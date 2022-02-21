@@ -53,7 +53,20 @@ public class Funciones {
 		return dias;
 	}
 	
-	public static boolean esTriangularSup(int matriz [][]) {
+	public int [] devuelveParesACero(int v[]) {
+		int paresCero [] = new int[v.length];
+		
+		for (int i = 0; i < v.length; i++) {
+			if (v[i]%2 ==0 ) {
+				paresCero[i] = 0;
+			} else {
+				paresCero[i]=v[i];
+			}
+		}
+		return paresCero;
+	}
+	
+	public boolean esTriangularSup(int matriz [][]) {
 		boolean triangsup=true;
 		
 		for (int i = 1; i < matriz.length && triangsup; i++) {
