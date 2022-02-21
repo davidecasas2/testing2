@@ -1,13 +1,20 @@
 /**
  * 
  */
-
+package funciones;
 
 public class Funciones {
 	
-	
-	public String diaSemana(int dia) {
-		String res="Domingo";
+	/**
+	 * Función que devuelve la representacion textual del 
+	 * día de la semana para el día pasado como parámetro. Por ejemplo,
+	 * si se pasa el dia 1 se dvuelve Domingo, el 2 devuelve lunes...
+	 * @param dia int El número del día de la semana
+	 * @return String con la representación textual del día de la semana
+	 * 
+	 */
+	public String diaSemana(int dia){
+		String res="Error";
 		// Switch con int como condicion
 		switch (dia) {
 		    case 1:
@@ -31,23 +38,25 @@ public class Funciones {
 		    case 7:
 		    	res="Sabado";
 		        break;
+		    default: 
+		        throw new ArithmeticException("Dia incorrecto");
 
 		}
 		return res;
 	}
 
-	int getDiasMes(String mes, boolean bisiesto) {
+	public int getDiasMes(String mes, boolean bisiesto) {
 		int dias = 30;
 		
 		if (mes.equalsIgnoreCase("enero") || mes.equalsIgnoreCase("marzo") || mes.equalsIgnoreCase("mayo") || 
 				mes.equalsIgnoreCase("julio") ||mes.equalsIgnoreCase("agosto") || mes.equalsIgnoreCase("octubre") ||
 				mes.equalsIgnoreCase("diciembre") ) {
-			dias=30;
+			dias=31;
 		} else if (mes.equalsIgnoreCase("febrero")){
 			if (bisiesto) {
 				dias=29;
 			} else {
-				dias=29;
+				dias=28;
 			}
 		}
 		return dias;
